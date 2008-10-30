@@ -36,14 +36,12 @@ $('one').animateSwap('blue short', 'red long', { duration : '4000' });
 var AnimationAdapter = {
 	animate : function(elements, destClassNames, animationOptions) {
 		var performAnimation = function() {
-			console.log('start hit')
 			if (animationOptions != null && animationOptions.startClassNames != null) {
 				var animator = Animator.apply(elements, [ animationOptions.startClassNames, destClassNames ], animationOptions);
 			} else { // use current styles as starting state
 			  var animator = Animator.apply(elements, destClassNames, animationOptions);
 			}
 		  animator.play();
-		  console.log('end hit')
 		};
 		var delaySeconds = animationOptions && animationOptions.delay;
 		delaySeconds ? performAnimation.delay(delaySeconds) : performAnimation.call();
@@ -55,6 +53,7 @@ var AnimationAdapter = {
 		var currentClassNames = $w(el.className); startClassNames = $w(startClassNames); destClassNames = $w(destClassNames);
 	  var resultClassNames = currentClassNames.concat(destClassNames).reject(function(e) { return startClassNames.include(e); });
 		AnimationAdapter.animate(el, resultClassNames.join(" "), animationOptions);
+		return el;
 	}
 };
 
