@@ -23,6 +23,7 @@ $('one').animateSwap('blue short', 'red long', { duration : '4000' });
 
 = Options =
 
+ * delay : 3 // seconds to delay execution
  * startClassNames : 'small white'
  * interval: 20,  // time between animation frames
  * duration: 400, // length of animation
@@ -34,12 +35,18 @@ $('one').animateSwap('blue short', 'red long', { duration : '4000' });
 
 var AnimationAdapter = {
 	animate : function(elements, destClassNames, animationOptions) {
-		if (animationOptions != null && animationOptions.startClassNames != null) {
-			var animator = Animator.apply(elements, [ animationOptions.startClassNames, destClassNames ], animationOptions);
-		} else { // use current styles as starting state
-		  var animator = Animator.apply(elements, destClassNames, animationOptions);
-		}
-		animator.play();
+		var performAnimation = function() {
+			console.log('start hit')
+			if (animationOptions != null && animationOptions.startClassNames != null) {
+				var animator = Animator.apply(elements, [ animationOptions.startClassNames, destClassNames ], animationOptions);
+			} else { // use current styles as starting state
+			  var animator = Animator.apply(elements, destClassNames, animationOptions);
+			}
+		  animator.play();
+		  console.log('end hit')
+		};
+		var delaySeconds = animationOptions && animationOptions.delay;
+		delaySeconds ? performAnimation.delay(delaySeconds) : performAnimation.call();
     return elements;
 	},
 	// changes the element by removing start class names, and adding dest class names through animations
