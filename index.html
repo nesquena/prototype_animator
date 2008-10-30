@@ -9,10 +9,25 @@
     <script src="javascripts/application.js" type="text/javascript" charset="utf-8"></script>
   </head>
   <body>
-    <div id="one" class="hey short blue" style='font-size:50px;'>
+    <h2>Box 1</h2>
+    <p>
+      <code>
+        onLoad  => $('one').animateSwitch('blue', 'red', { duration : '2000' });<br/>
+        onClick => $('one').animateSwitch('red short', 'green long', { duration : '2000' });
+      </code>
+    </p>
+
+    <div id="one" class="box short blue" style='font-size:50px;'>
       hey
     </div>
-    <div class="hey short blue">
+    <h2>Box 2</h2>
+    <p>
+      <code>
+        onLoad  => $('two').animate('box green short', { duration : '2000' });<br/>
+        onClick => $('two').animate('box purple wide', { duration : '2000' });
+      </code>
+    </p>
+    <div id="two" class="box short blue">
       hey
     </div>
   </body>

@@ -1,5 +1,10 @@
 #one {
+  border-color: #003322;
+}
 
+.box {
+	border: 1px solid black;
+	padding: 10px;
 }
 
 .short {
@@ -8,21 +13,31 @@
 }
 
 .blue {
-	color: gray;
-	background-color: blue;
+	color: #ddeeff;
+	background-color: #110088;
 }
 
 .green {
-	color: gray;
-	background-color: green;
+	color: #bbffbb;
+	background-color: #117700;
+}
+
+.purple {
+	color: #ffccff;
+	background-color: #550044;
+	font-size: 40px;
 }
 
 .red {
-	color: gray;
-	background-color: red;
+	color: #ffccbb;
+	background-color: #660000;
 }
 
 .long {
 	width: 200px;
 	height: 300px;
+}
+
+.wide {
+	width: 500px;
 }
