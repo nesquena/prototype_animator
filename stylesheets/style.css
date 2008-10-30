@@ -1,69 +1,24 @@
 /* General */
 
-#one {
-  border-color: #003322;
-}
+#one { border-color: #003322; }
+.box { border: 1px solid black; padding: 10px; position: relative; }
 
-.box {
-	border: 1px solid black;
-	padding: 10px;
-	position: relative;
-}
+/* Colors */
 
-/* Index */
+.blue   { color: #ddeeff; background-color: #110088; font-size: 15px; }
+.green  { color: #bbffbb; background-color: #117700; font-size: 20px; }
+.red    { color: #ffccbb; background-color: #660000; font-size: 30px; }
+.purple { color: #ffccff; background-color: #550044; font-size: 40px; }
 
-.short {
-	width: 100px;
-	height: 100px;
-}
+/* Sizes */
 
-.blue {
-	color: #ddeeff;
-	background-color: #110088;
-}
-
-.green {
-	color: #bbffbb;
-	background-color: #117700;
-}
-
-.purple {
-	color: #ffccff;
-	background-color: #550044;
-	font-size: 40px;
-	border-width: 10px;
-	margin-left: 10px;
-  left: 300px
-}
-
-.red {
-	color: #ffccbb;
-	background-color: #660000;
-}
-
-.long {
-	width: 200px;
-	height: 300px;
-}
-
-.wide {
-	width: 500px;
-}
+.short { width: 100px; height: 100px; }
+.long  { width: 200px; height: 300px; }
+.wide  { width: 500px; }
 
 /* Moving */
 
-.top {
-	top: 10px;
-}
-
-.left {
-	left: 10px;
-}
-
-.right {
-	left: 500px;
-}
-
-.bottom {
-	top: 500px;
-}
+.top    { top: 10px;   } 
+.left   { left: 10px;  }
+.right  { left: 300px; }
+.bottom { top: 300px;  }

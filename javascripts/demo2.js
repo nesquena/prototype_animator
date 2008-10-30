@@ -1,27 +1,24 @@
 document.observe('dom:loaded', function() {
-	var box = new MovingBox($('one'));
-  $('one').observe('click', box.clicked.bind(box));
+	var movingBox = new MovingBox($('one'));
+  $('one').observe('click', function() { movingBox.clicked(); });
 });
 
 var MovingBox = Class.create({
 	initialize : function(element) {
 		this.element = element;
-	  this.positions = [ 'top left', 'top right', 'bottom right', 'bottom left'];	
 	  this.currentPosition = 0;
-	  this.setPosition(0);
+	  this.element.addClassName('top left');
+		this.positions = [ 'top left blue', 'top right green', 'bottom right red', 'bottom left purple'];	
 	},
 	clicked : function() {
-		this.incrementPosition();
-	},
-	incrementPosition : function() {
-		var nextPosition = (this.currentPosition == this.positions.length - 1) ? 0 : (this.currentPosition + 1)
-		this.setPosition(nextPosition)
+		var nextPosition = this.currentPosition + 1;
+		if (nextPosition == this.positions.length) { nextPosition = 0; }
+		this.setPosition(nextPosition);
 	},
 	setPosition : function(index) {
 		var currentStyles = this.getStylesAt(this.currentPosition);
 		this.currentPosition = index;
 		var nextStyles = this.getStylesAt(this.currentPosition);
-		if (currentStyles == nextStyles) { currentStyles = '' }
 		this.element.animateSwap(currentStyles, nextStyles);
 	},
  	getStylesAt : function(positionIndex) {

@@ -1,16 +1,29 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
   <head>
-    <title>Test</title>
+    <title>Demo 2</title>
     <link href="stylesheets/style.css" type="text/css" rel="stylesheet">
     <script src="javascripts/prototype.js" type="text/javascript" charset="utf-8"></script>
     <script src="javascripts/animator.js" type="text/javascript" charset="utf-8"></script>
     <script src="javascripts/prototype_animator.js" type="text/javascript" charset="utf-8"></script>
-    <script src="javascripts/application.js" type="text/javascript" charset="utf-8"></script>
+    <script src="javascripts/demo2.js" type="text/javascript" charset="utf-8"></script>
   </head>
   <body>
-    <div id="one" class="box short blue" style='font-size:50px;'>
-      One
-    </div>
+    <body>
+      <a href='demo1.html'>Demo 1</a><br/>
+      <a href='demo2.html'>Demo 2</a>
+      <hr/>
+      <h2>Demo 2</h2>
+      <div style='position:absolute; top: 290px; left: 70px; height: 300px; width: 300px; border: 1px dotted black;'></div>
+      <h2>Box 1</h2>
+      <p>
+        <code>
+        var movingBox = new MovingBox($('one')); <br/>
+        $('one').observe('click', function() { movingBox.clicked(); });
+        </code>
+      </p>
+      <div id="one" class="box short blue">
+        Click
+      </div>
   </body>
 </html>

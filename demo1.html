@@ -1,24 +1,28 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
   <head>
-    <title>Test</title>
+    <title>Demo 1</title>
     <link href="stylesheets/style.css" type="text/css" rel="stylesheet">
     <script src="javascripts/prototype.js" type="text/javascript" charset="utf-8"></script>
     <script src="javascripts/animator.js" type="text/javascript" charset="utf-8"></script>
     <script src="javascripts/prototype_animator.js" type="text/javascript" charset="utf-8"></script>
-    <script src="javascripts/application.js" type="text/javascript" charset="utf-8"></script>
+    <script src="javascripts/demo1.js" type="text/javascript" charset="utf-8"></script>
   </head>
   <body>
+    <a href='demo1.html'>Demo 1</a><br/>
+    <a href='demo2.html'>Demo 2</a>
+    <hr/>
+    <h2>Demo 1</h2>
     <h2>Box 1</h2>
     <p>
       <code>
-        onLoad  => $('one').animateSwap('blue', 'red', { duration : '2000' });<br/>
-        onClick => $('one').animateSwap('red short', 'green long', { duration : '2000' });
+        onLoad  => $('one').animateSwap('blue', 'red', { duration : '3000' });<br/>
+        onClick => $('one').animateSwap('red short', 'green long');
       </code>
     </p>
 
-    <div id="one" class="box short blue" style='font-size:50px;'>
-      hey
+    <div id="one" class="box short blue" style='font-size:40px;'>
+      Click
     </div>
     <h2>Box 2</h2>
     <p>
@@ -28,7 +32,7 @@
       </code>
     </p>
     <div id="two" class="box short blue">
-      hey
+      Click
     </div>
   </body>
 </html>
