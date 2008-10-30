@@ -51,7 +51,7 @@ var AnimationAdapter = {
 	// leaves classes that are not mentioned untouched on element
 	animateSwap : function(el, startClassNames, destClassNames, animationOptions) {
 		var currentClassNames = $w(el.className); startClassNames = $w(startClassNames); destClassNames = $w(destClassNames);
-	  var resultClassNames = currentClassNames.concat(destClassNames).reject(function(e) { return startClassNames.include(e); });
+	  var resultClassNames = currentClassNames.reject(function(e) { return startClassNames.include(e); }).concat(destClassNames);
 		AnimationAdapter.animate(el, resultClassNames.join(" "), animationOptions);
 		return el;
 	}

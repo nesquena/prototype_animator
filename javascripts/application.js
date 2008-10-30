@@ -1,13 +1,30 @@
 document.observe('dom:loaded', function() {
-	// box 1 using the animateSwitch function (switches between two specified classes)
-	$('one').animateSwap('blue', 'red');
-	$('one').observe('click', function() {
-		$('one').animateSwap('red short', 'green long', { duration : '2000' });
-	});
-	
-	// box 2 using the animate function (specifies precisely the classes to exist on an element)
-	$('two').animate('box green short', { duration : '2000', delay : 2 });
-	$('two').observe('click', function() {
-		$('two').animate('box purple wide', { duration : '2000' });
-	});
+	var box = new MovingBox($('one'));
+  $('one').observe('click', box.clicked.bind(box));
+});
+
+var MovingBox = Class.create({
+	initialize : function(element) {
+		this.element = element;
+	  this.positions = [ 'top left', 'top right', 'bottom right', 'bottom left'];	
+	  this.currentPosition = 0;
+	  this.setPosition(0);
+	},
+	clicked : function() {
+		this.incrementPosition();
+	},
+	incrementPosition : function() {
+		var nextPosition = (this.currentPosition == this.positions.length - 1) ? 0 : (this.currentPosition + 1)
+		this.setPosition(nextPosition)
+	},
+	setPosition : function(index) {
+		var currentStyles = this.getStylesAt(this.currentPosition);
+		this.currentPosition = index;
+		var nextStyles = this.getStylesAt(this.currentPosition);
+		if (currentStyles == nextStyles) { currentStyles = '' }
+		this.element.animateSwap(currentStyles, nextStyles);
+	},
+ 	getStylesAt : function(positionIndex) {
+		return this.positions[positionIndex];
+	}
 });

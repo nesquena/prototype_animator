@@ -1,3 +1,5 @@
+/* General */
+
 #one {
   border-color: #003322;
 }
@@ -5,7 +7,10 @@
 .box {
 	border: 1px solid black;
 	padding: 10px;
+	position: relative;
 }
+
+/* Index */
 
 .short {
 	width: 100px;
@@ -26,6 +31,9 @@
 	color: #ffccff;
 	background-color: #550044;
 	font-size: 40px;
+	border-width: 10px;
+	margin-left: 10px;
+  left: 300px
 }
 
 .red {
@@ -40,4 +48,22 @@
 
 .wide {
 	width: 500px;
+}
+
+/* Moving */
+
+.top {
+	top: 10px;
+}
+
+.left {
+	left: 10px;
+}
+
+.right {
+	left: 500px;
+}
+
+.bottom {
+	top: 500px;
 }
