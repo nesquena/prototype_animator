@@ -1,0 +1,28 @@
+#one {
+
+}
+
+.short {
+	width: 100px;
+	height: 100px;
+}
+
+.blue {
+	color: gray;
+	background-color: blue;
+}
+
+.green {
+	color: gray;
+	background-color: green;
+}
+
+.red {
+	color: gray;
+	background-color: red;
+}
+
+.long {
+	width: 200px;
+	height: 300px;
+}
