@@ -6,8 +6,8 @@ document.observe('dom:loaded', function() {
 	});
 	
 	// box 2 using the animate function (specifies precisely the classes to exist on an element)
-	$('two').animate('box green short', { duration : '2000', delay : 2 });
+	$('two').animate('boxed green short', { duration : '2000', delay : 2 });
 	$('two').observe('click', function() {
-		$('two').animate('box purple wide', { duration : '2000' });
+		$('two').animate('boxed purple wide', { duration : '2000' });
 	});
 });
