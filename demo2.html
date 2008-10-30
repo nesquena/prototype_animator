@@ -14,12 +14,15 @@
       <a href='demo2.html'>Demo 2</a>
       <hr/>
       <h2>Demo 2</h2>
-      <div style='position:absolute; top: 290px; left: 70px; height: 300px; width: 300px; border: 1px dotted black;'></div>
+      <div style='position:absolute; top: 320px; left: 70px; height: 300px; width: 300px; border: 1px dotted black;'></div>
       <h2>Box 1</h2>
       <p>
         <code>
+        // on load
         var movingBox = new MovingBox($('one')); <br/>
-        $('one').observe('click', function() { movingBox.clicked(); });
+        $('one').observe('click', function() { movingBox.clicked(); });<br/>
+        // when clicked<br/>
+        this.element.animateSwap(existingPositionStyles, nextPositionStyles);<br/>
         </code>
       </p>
       <div id="one" class="box short blue">
