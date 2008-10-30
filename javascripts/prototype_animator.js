@@ -6,7 +6,7 @@ $('one').animate('red short');
 $$('.hey').animate('red short');
 $$('.hey').animate('red short', { startClassNames : 'blue long', duration : '2000', onComplete : function() { alert('done'); } });
 
-$('one').animateSwitch('blue short', 'red long', { duration : '4000' });
+$('one').animateSwap('blue short', 'red long', { duration : '4000' });
 
 = Transitions =
 
@@ -42,9 +42,9 @@ var AnimationAdapter = {
 		animator.play();
     return elements;
 	},
-	// switches the element by removing start class names, and adding dest class names through animation
-	// leaves classes that are not mentioned untouched
-	animateSwitch : function(el, startClassNames, destClassNames, animationOptions) {
+	// changes the element by removing start class names, and adding dest class names through animations
+	// leaves classes that are not mentioned untouched on element
+	animateSwap : function(el, startClassNames, destClassNames, animationOptions) {
 		var currentClassNames = $w(el.className); startClassNames = $w(startClassNames); destClassNames = $w(destClassNames);
 	  var resultClassNames = currentClassNames.concat(destClassNames).reject(function(e) { return startClassNames.include(e); });
 		AnimationAdapter.animate(el, resultClassNames.join(" "), animationOptions);
