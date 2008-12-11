@@ -19,14 +19,12 @@ In a nutshell, any element within the DOM can be seamlessly transitioned from ha
 = Usage
 
   #  style.css
-
   .blue  { background-color: blue; }
   .red   { background-color: red;  }
   .short { width: 200px; }
   .long  { width: 400px; }
   
   # index.html
-  
   <head>
     <script charset="utf-8" type="text/javascript" src="prototype.js"></script>
     <script charset="utf-8" type="text/javascript" src="animator.js"></script>
@@ -38,7 +36,6 @@ In a nutshell, any element within the DOM can be seamlessly transitioned from ha
   </body>
   
   # application.js
-
   document.observe('dom:ready', function(){
     $('one').animateSwap('blue', 'red', { duration : '3000' });
   });
@@ -50,6 +47,8 @@ In a nutshell, any element within the DOM can be seamlessly transitioned from ha
 This will change the element one from having a blue background to a red one with an animation over 1 second. 
 
 On the click, the rectangle will change from a red backround and a 200px width to a green background and a 400px width.
+
+Please read the GitHub wiki for more information about how this library works. The basics are very simple and you can start building complex animations based purely on css classes in no time.
 
 = Credit
 
