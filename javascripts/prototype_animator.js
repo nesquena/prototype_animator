@@ -7,6 +7,8 @@ $$('.hey').animate('red short');
 $$('.hey').animate('red short', { startClassNames : 'blue long', duration : '2000', onComplete : function() { alert('done'); } });
 
 $('one').animateSwap('blue short', 'red long', { duration : '4000' });
+$('one').animateAdd('blue short', { duration : '4000' });
+$('one').animateRemove('blue short', { duration : '4000' });
 
 = Transitions =
 
@@ -54,6 +56,14 @@ var AnimationAdapter = {
 	  var resultClassNames = currentClassNames.reject(function(e) { return startClassNames.include(e); }).concat(destClassNames);
 		AnimationAdapter.animate(el, resultClassNames.join(" "), animationOptions);
 		return el;
+	},
+	// appends and animates adding class names onto an element
+	animateAdd : function(el, addedClassNames, animationOptions) {
+	  AnimationAdapter.animateSwap(el, '', addedClassNames, animationOptions);
+	},
+	// appends and animates removing class names onto an element
+	animateRemove : function(el, removedClassNames, animationOptions) {
+	  AnimationAdapter.animateSwap(el, removedClassNames, '', animationOptions);
 	}
 };
 
