@@ -59,11 +59,11 @@ var AnimationAdapter = {
 	},
 	// appends and animates adding class names onto an element
 	animateAdd : function(el, addedClassNames, animationOptions) {
-	  AnimationAdapter.animateSwap(el, '', addedClassNames, animationOptions);
+	  return AnimationAdapter.animateSwap(el, '', addedClassNames, animationOptions);
 	},
 	// appends and animates removing class names onto an element
 	animateRemove : function(el, removedClassNames, animationOptions) {
-	  AnimationAdapter.animateSwap(el, removedClassNames, '', animationOptions);
+	  return AnimationAdapter.animateSwap(el, removedClassNames, '', animationOptions);
 	}
 };
 
